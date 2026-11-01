@@ -23,7 +23,7 @@ export default defineConfig(() => {
           display: 'standalone',
           orientation: 'portrait-primary',
           start_url: '/ScentCafe-/',
-          scope: '/','/ScentCafe-/',
+          scope: '/ScentCafe-/',
           icons: [
             {
               src: '/ScentCafe-/pwa-192x192.png',
@@ -38,7 +38,7 @@ export default defineConfig(() => {
               purpose: 'any',
             },
             {
-            src: '/ScentCafe-/pwa-maskable-512x512.png',
+              src: '/ScentCafe-/pwa-maskable-512x512.png',
               sizes: '512x512',
               type: 'image/png',
               purpose: 'maskable',
