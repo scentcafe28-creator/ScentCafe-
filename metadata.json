@@ -1,0 +1,6 @@
+{
+  "name": "ScentCafe",
+  "description": "FIND IT. REQUEST IT. RECEIVE IT. Convenient South African digital services, applications, and verified facilitation.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

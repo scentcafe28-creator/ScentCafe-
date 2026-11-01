@@ -1,0 +1,406 @@
+{
+  "entities": {
+    "Admin": {
+      "title": "Admin",
+      "description": "System and business administrator records",
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string",
+          "description": "Administrator email address"
+        },
+        "role": {
+          "type": "string",
+          "description": "Role level",
+          "enum": ["admin", "superadmin"]
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "Timestamp of admin grant"
+        }
+      },
+      "required": ["email", "role"]
+    },
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "Customer account profile",
+      "type": "object",
+      "properties": {
+        "uid": {
+          "type": "string",
+          "description": "Firebase Auth UID"
+        },
+        "email": {
+          "type": "string",
+          "description": "User email address"
+        },
+        "displayName": {
+          "type": "string",
+          "description": "Customer full name",
+          "maxLength": 100
+        },
+        "phoneNumber": {
+          "type": "string",
+          "description": "Customer contact number",
+          "maxLength": 30
+        },
+        "role": {
+          "type": "string",
+          "description": "User account role",
+          "enum": ["customer", "admin"]
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "Creation timestamp"
+        },
+        "updatedAt": {
+          "type": "string",
+          "description": "Last updated timestamp"
+        }
+      },
+      "required": ["uid", "email", "displayName"]
+    },
+    "ServiceItem": {
+      "title": "ServiceItem",
+      "description": "Offered digital assistance and application services",
+      "type": "object",
+      "properties": {
+        "categoryId": {
+          "type": "string",
+          "description": "Category identifier"
+        },
+        "title": {
+          "type": "string",
+          "description": "Service name",
+          "maxLength": 120
+        },
+        "shortDescription": {
+          "type": "string",
+          "description": "Brief summary",
+          "maxLength": 300
+        },
+        "detailedGuide": {
+          "type": "string",
+          "description": "Step-by-step guidance and requirements",
+          "maxLength": 3000
+        },
+        "officialUrl": {
+          "type": "string",
+          "description": "Official government or entity portal URL if applicable"
+        },
+        "isExternalOfficial": {
+          "type": "boolean",
+          "description": "Whether service directs to an official portal"
+        },
+        "turnaroundTime": {
+          "type": "string",
+          "description": "Estimated turnaround duration"
+        },
+        "feeZAR": {
+          "type": "number",
+          "description": "Service fee in South African Rand"
+        },
+        "disclaimer": {
+          "type": "string",
+          "description": "Compliance and non-affiliation disclaimer"
+        }
+      },
+      "required": ["categoryId", "title", "shortDescription"]
+    },
+    "ServiceRequest": {
+      "title": "ServiceRequest",
+      "description": "Customer service application ticket",
+      "type": "object",
+      "properties": {
+        "referenceNumber": {
+          "type": "string",
+          "description": "Unique reference ID (e.g., SC-2026-9281)",
+          "maxLength": 30
+        },
+        "serviceId": {
+          "type": "string",
+          "description": "ID of requested service"
+        },
+        "serviceTitle": {
+          "type": "string",
+          "description": "Name of requested service",
+          "maxLength": 120
+        },
+        "category": {
+          "type": "string",
+          "description": "Category name",
+          "maxLength": 80
+        },
+        "userId": {
+          "type": "string",
+          "description": "Author UID"
+        },
+        "customerName": {
+          "type": "string",
+          "description": "Customer contact name",
+          "maxLength": 100
+        },
+        "customerEmail": {
+          "type": "string",
+          "description": "Customer email",
+          "maxLength": 120
+        },
+        "customerPhone": {
+          "type": "string",
+          "description": "Contact number",
+          "maxLength": 30
+        },
+        "description": {
+          "type": "string",
+          "description": "Assistance details provided by customer",
+          "maxLength": 3000
+        },
+        "status": {
+          "type": "string",
+          "description": "Lifecycle state",
+          "enum": ["Submitted", "In Review", "Awaiting Customer", "In Progress", "Completed", "Cancelled"]
+        },
+        "adminNotes": {
+          "type": "string",
+          "description": "Staff internal remarks",
+          "maxLength": 2000
+        },
+        "customerNote": {
+          "type": "string",
+          "description": "Latest response to customer",
+          "maxLength": 2000
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "Submission ISO timestamp"
+        },
+        "updatedAt": {
+          "type": "string",
+          "description": "Update ISO timestamp"
+        }
+      },
+      "required": ["referenceNumber", "serviceTitle", "userId", "customerName", "customerEmail", "description", "status"]
+    },
+    "Product": {
+      "title": "Product",
+      "description": "ScentCafe fragrances and digital physical items",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Product display name",
+          "maxLength": 120
+        },
+        "category": {
+          "type": "string",
+          "description": "Product catalog classification",
+          "maxLength": 60
+        },
+        "description": {
+          "type": "string",
+          "description": "Product details and aroma notes",
+          "maxLength": 1000
+        },
+        "price": {
+          "type": "number",
+          "description": "Price in South African Rand (ZAR)"
+        },
+        "volume": {
+          "type": "string",
+          "description": "Size e.g. 50ml, 100ml"
+        },
+        "inStock": {
+          "type": "boolean",
+          "description": "Inventory availability"
+        },
+        "rating": {
+          "type": "number",
+          "description": "Review rating"
+        },
+        "imageUrl": {
+          "type": "string",
+          "description": "Product photo URL"
+        },
+        "scentNotes": {
+          "type": "string",
+          "description": "Top, heart, and base notes"
+        }
+      },
+      "required": ["name", "price", "category", "inStock"]
+    },
+    "Order": {
+      "title": "Order",
+      "description": "Customer product purchase or order request",
+      "type": "object",
+      "properties": {
+        "referenceNumber": {
+          "type": "string",
+          "description": "Order code (e.g., ORD-2026-1182)",
+          "maxLength": 30
+        },
+        "userId": {
+          "type": "string",
+          "description": "Customer UID"
+        },
+        "customerName": {
+          "type": "string",
+          "description": "Recipient full name",
+          "maxLength": 100
+        },
+        "customerEmail": {
+          "type": "string",
+          "description": "Notification email",
+          "maxLength": 120
+        },
+        "customerPhone": {
+          "type": "string",
+          "description": "Delivery phone number",
+          "maxLength": 30
+        },
+        "deliveryAddress": {
+          "type": "string",
+          "description": "Physical shipping location in SA",
+          "maxLength": 500
+        },
+        "totalAmount": {
+          "type": "number",
+          "description": "Grand total in ZAR"
+        },
+        "status": {
+          "type": "string",
+          "description": "Fulfillment state",
+          "enum": ["Submitted", "Processing", "Ready for Delivery", "Delivered", "Cancelled"]
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "Order placement timestamp"
+        }
+      },
+      "required": ["referenceNumber", "userId", "customerName", "customerEmail", "deliveryAddress", "totalAmount", "status"]
+    },
+    "LocalProvider": {
+      "title": "LocalProvider",
+      "description": "Vetted South African community service provider",
+      "type": "object",
+      "properties": {
+        "businessName": {
+          "type": "string",
+          "description": "Enterprise name",
+          "maxLength": 100
+        },
+        "category": {
+          "type": "string",
+          "description": "Trade type",
+          "maxLength": 60
+        },
+        "city": {
+          "type": "string",
+          "description": "Metropolitan or town",
+          "maxLength": 60
+        },
+        "province": {
+          "type": "string",
+          "description": "South African province",
+          "maxLength": 40
+        },
+        "description": {
+          "type": "string",
+          "description": "Provider capabilities and services",
+          "maxLength": 1000
+        },
+        "contactNumber": {
+          "type": "string",
+          "description": "Direct phone or WhatsApp",
+          "maxLength": 30
+        },
+        "contactEmail": {
+          "type": "string",
+          "description": "Business email",
+          "maxLength": 100
+        },
+        "verified": {
+          "type": "boolean",
+          "description": "Verification check status"
+        },
+        "isDemonstration": {
+          "type": "boolean",
+          "description": "Label indicating sample demo directory entry"
+        }
+      },
+      "required": ["businessName", "category", "city", "province", "description", "contactNumber"]
+    },
+    "NotificationItem": {
+      "title": "NotificationItem",
+      "description": "In-app alerts for customer updates",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "description": "Recipient UID"
+        },
+        "title": {
+          "type": "string",
+          "description": "Subject header",
+          "maxLength": 120
+        },
+        "message": {
+          "type": "string",
+          "description": "Notice message body",
+          "maxLength": 1000
+        },
+        "type": {
+          "type": "string",
+          "description": "Category of notification",
+          "enum": ["request", "order", "system"]
+        },
+        "relatedId": {
+          "type": "string",
+          "description": "ID of request or order"
+        },
+        "read": {
+          "type": "boolean",
+          "description": "Read flag"
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "Creation timestamp"
+        }
+      },
+      "required": ["userId", "title", "message", "type", "read"]
+    }
+  },
+  "firestore": {
+    "/admins/{adminId}": {
+      "schema": "Admin",
+      "description": "Registered system administrators"
+    },
+    "/users/{userId}": {
+      "schema": "UserProfile",
+      "description": "Registered customer profiles"
+    },
+    "/services/{serviceId}": {
+      "schema": "ServiceItem",
+      "description": "Catalog of digital and government assistance services"
+    },
+    "/service_requests/{requestId}": {
+      "schema": "ServiceRequest",
+      "description": "Customer service application requests"
+    },
+    "/products/{productId}": {
+      "schema": "Product",
+      "description": "ScentCafe perfumes and goods catalog"
+    },
+    "/orders/{orderId}": {
+      "schema": "Order",
+      "description": "Marketplace customer orders"
+    },
+    "/local_providers/{providerId}": {
+      "schema": "LocalProvider",
+      "description": "Community local service providers directory"
+    },
+    "/notifications/{notificationId}": {
+      "schema": "NotificationItem",
+      "description": "User notification inbox"
+    }
+  }
+}

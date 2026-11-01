@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0E1736" />
+      <stop offset="50%" stop-color="#0B132B" />
+      <stop offset="100%" stop-color="#050814" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDE087" />
+      <stop offset="50%" stop-color="#D4AF37" />
+      <stop offset="100%" stop-color="#997715" />
+    </linearGradient>
+    <radialGradient id="auraGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#D4AF37" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#D4AF37" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Background rounded rect -->
+  <rect width="512" height="512" rx="108" fill="url(#bgGrad)" />
+  <rect width="500" height="500" x="6" y="6" rx="102" fill="none" stroke="url(#goldGrad)" stroke-width="4" stroke-opacity="0.4" />
+
+  <!-- Center Golden Glow Aura -->
+  <circle cx="256" cy="265" r="180" fill="url(#auraGrad)" />
+
+  <!-- Scent & Digital Sparkle Ring -->
+  <circle cx="256" cy="265" r="160" fill="none" stroke="url(#goldGrad)" stroke-width="2" stroke-dasharray="8 12" stroke-opacity="0.35" />
+
+  <!-- Perfume Atomizer Cap & Sprayer -->
+  <rect x="226" y="115" width="60" height="35" rx="10" fill="url(#goldGrad)" />
+  <rect x="241" y="150" width="30" height="24" fill="#F5D061" />
+
+  <!-- Bottle Neck & Shoulders -->
+  <path d="M176 195 C176 195 150 220 150 255 L150 380 C150 405 170 425 195 425 L317 425 C342 425 362 405 362 380 L362 255 C362 220 336 195 336 195 Z"
+        fill="#141E3C" stroke="url(#goldGrad)" stroke-width="12" stroke-linejoin="round" />
+
+  <!-- Golden Scent Essence Tear Drop -->
+  <path d="M256 240 C230 280 205 315 205 348 C205 378 228 400 256 400 C284 400 307 378 307 348 C307 315 282 280 256 240 Z"
+        fill="url(#goldGrad)" />
+
+  <!-- Facet Highlight Lines -->
+  <path d="M185 240 L185 385" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-opacity="0.4" />
+  <path d="M327 240 L327 385" stroke="url(#goldGrad)" stroke-width="3" stroke-linecap="round" stroke-opacity="0.5" />
+
+  <!-- Top Right Sparkle Star -->
+  <polygon points="370,140 376,158 394,164 376,170 370,188 364,170 346,164 364,158" fill="#FFF2B2" />
+  <polygon points="145,170 149,182 161,186 149,190 145,202 141,190 129,186 141,182" fill="#FFF2B2" opacity="0.8" />
+  <circle cx="390" cy="225" r="5" fill="#FFE082" />
+</svg>
