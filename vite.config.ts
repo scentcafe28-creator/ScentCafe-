@@ -6,6 +6,7 @@ import { VitePWA } from 'vite-plugin-pwa';
 
 export default defineConfig(() => {
   return {
+    base: '/ScentCafe-/',
     plugins: [
       react(),
       tailwindcss(),
@@ -13,7 +14,7 @@ export default defineConfig(() => {
         registerType: 'autoUpdate',
         includeAssets: ['icon.svg', 'apple-touch-icon.png', 'pwa-192x192.png', 'pwa-512x512.png', 'manifest.json'],
         manifest: {
-          id: '/',
+          id: '/ScentCafe-/',
           name: 'ScentCafe - Digital Services & Application Facilitation',
           short_name: 'ScentCafe',
           description: 'South African digital services facilitation, online applications, and administrative support.',
@@ -21,23 +22,23 @@ export default defineConfig(() => {
           background_color: '#0B132B',
           display: 'standalone',
           orientation: 'portrait-primary',
-          start_url: '/',
-          scope: '/',
+          start_url: '/ScentCafe-/',
+          scope: '/','/ScentCafe-/',
           icons: [
             {
-              src: '/pwa-192x192.png',
+              src: '/ScentCafe-/pwa-192x192.png',
               sizes: '192x192',
               type: 'image/png',
               purpose: 'any',
             },
             {
-              src: '/pwa-512x512.png',
+              src: '/ScentCafe-/pwa-512x512.png',
               sizes: '512x512',
               type: 'image/png',
               purpose: 'any',
             },
             {
-              src: '/pwa-maskable-512x512.png',
+            src: '/ScentCafe-/pwa-maskable-512x512.png',
               sizes: '512x512',
               type: 'image/png',
               purpose: 'maskable',
